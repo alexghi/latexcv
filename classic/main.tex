@@ -46,6 +46,8 @@
 % provides \isempty test
 \usepackage{xifthen}
 
+\usepackage{xstring}
+
 %----------------------------------------------------------------------------------------
 %	FONT
 %----------------------------------------------------------------------------------------
@@ -239,7 +241,16 @@
 % param 4:	what was your position
 % param 5:	some words about your contributions
 %
-\newcommand{\cvevent}[5]
+
+\newcommand\AddAdditional[1]{
+%
+	\StrLen{#1}[\MyStrLen]% we find the length of the string and store it in \MyStrLen
+	\ifthenelse{\equal{\MyStrLen}{1}}% we compare the length of the string with 1
+	{\\}{ $\cdot$ #1\\[6pt]}
+}
+
+
+\newcommand{\cvevent}[7]
 {
 
 \begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
@@ -252,7 +263,8 @@
 
   $\cdot$ #4\\[3pt]
   $\cdot$ #5\\[6pt]
-
+	\AddAdditional{#6}
+	\AddAdditional{#7}
 }
 
 % creates a stretched box as 
@@ -310,8 +322,8 @@
 %----------------------------------------------------------------------------------------
 \vspace{-8pt}
 \begin{center}
-	\HUGE \textsc{Jan Küster} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
-	\small Consultant and Software Developer
+	\HUGE \textsc{Alex Ghiurau} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+	\small Software Developer
 \end{center}
 
 
@@ -322,10 +334,10 @@
 %---------------------------------------------------------------------------------------
 %	META SECTION
 %----------------------------------------------------------------------------------------
-\metasection{Bremen, Germany}{\textbf{Status:} M.Sc. Digital Media, Scientific Employee}
-\metasection{www.jankuester.com}{\textbf{Fields:} Software Engineering, Consulting, Scrum, Usability} 
-\metasection{info@jankuester.com}{\textbf{Techs:} Meteor, Javascript, Mongo,. Bootstrap, Bash, Git, Webstorm}
-\metasection{+49 176 *** *** **}{\textbf{Activities:} Global Game Jam, Open Source, Fitness}
+\metasection{Oradea, Romania}{\textbf{Status:} Fullstack JS Engineer, B.Sc.Eng - Networking \& Telecommunications}
+\metasection{}{\textbf{Fields:} Project Management, Software Development, UX}
+\metasection{alex.ghiurau@gmail.com}{\textbf{Techs:} Javascript - (React, Node, Extjs), ReactNative, Electron, GraphQL, MySQL, \\ PHP, Git, PhpStorm, Sourcetree, AWS - (S3, CloudWatch)}
+\metasection{+40 748 575 751}{\textbf{Activities:} Playing guitar, Hiking mountains \& taking spectacular photos}
 \vspace{-2pt}
 \textcolor{softcol}{\hrule}
 \vspace{6pt}
@@ -337,7 +349,7 @@
 %----------------------------------------------------------------------------------------
 \vspace{-6pt}
 \cvsection{Summary}
-Digital media graduate with project experience in the field of technology based assessment. Currently working as IT Consultant at We4IT, Bremen in the field of IBM Notes Domino and XPages applications. Master studies focused on teams from different disciplines and cultural backgrounds on solutions for complex problems.\\
+I am a networking \& telecommunications graduate (B.S.E) with project experience in the private sector. I worked at Digi Communications, also known as RCS \& RDS (romania communication systems - romania data systems), as a Tech Support for clients. Now I'm developing a mobile app for Paymo, a Project Management Platform.
 
 
 %============================================================================%
@@ -351,26 +363,24 @@ Digital media graduate with project experience in the field of technology based 
 %----------------------------------------------------------------------------------------
 \cvsection{Experience}
 
-\cvevent{2016 - present}{Scientific Employee / PhD Student}{University of Bremen}{Develop and evaluate the next generation learning management system with Meteor}{Define a new level of software for classroom management based on an extensive nursing curriculum.}
-
 %
-\cvevent{2014 - 2016}{IT Consultant for IBM XPages and Notes Domino}{We4IT GmbH Bremen}{Realize projects in XPages and We4IT Aveedo, monitor project status, conduct reports}{Implement the frontend for a BPMN compatible engine within We4IT Aveedo}
+\cvevent{2017 - present}{Fullstack Javascript Engineer}{Paymo}
+{Implement a Notifications Systems - a queued system that sends email notifications, in-app notifications, and mobile notifications (using Firebase) to concerned users using PHP Resque \& Redis}
+{Develop a timer widget using Electron so that users can easily track time and add time entries from their desktop platforms}
+{Develop a mobile app that resembles the web-app functionality using ReactNative, GraphQL \& other libraries}
+{Create an onboarding progress tutorial for newly subscribed users using React}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2012 - 2014}{Scientific Employee / Software Development}{University of Bremen}{Invented a flexible assessment framework, targeting industrial trainees}{Supervised software development lifecycle, Recruited team members}
+\cvevent{2015 - 2016}{Junior Javascript Engineer}{Paymo}{Implement a File Uploader system that uploads in chunks on S3}{Restyled an old application using SCSS compiler \& give valuable UX advice}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2011 / 11}{Project Management Simulation Training}{Getoq Consulting}{Performed a two-day project simulation from management perspective}{Topics included customer contracts, change management, controlling, operational tasks}
+\cvevent{2012 - 2015}{Tech Support / Customer Service Representative}{RCS-RDS}{Diagnose client problems and solve them via intern systems}{Add \& solve technical tickets}
 
 %\textcolor{softcol}{\hrule}
-
-
-%
-\cvevent{2010 - 2011}{Student Assistant / Programmer}{otulea.uni-bremen.de}{Realized an online diagnosis platform for workforce literacy development (Flex)}{Modeled software design, implemented various prototypes, conducted usability tests}
 
 
 %---------------------------------------------------------------------------------------
@@ -378,23 +388,17 @@ Digital media graduate with project experience in the field of technology based 
 %--------------------------------------------------------------------------------------
 \cvsection{Education}
 
-\cvevent{2015 / 07}{Graduated as M.Sc. Digital Media}{University of Bremen}{Master Thesis: Semi Automated Scoring in Technology Based Assessment}{Developed and evaluated an algorithm for semi automated scoring of spreadsheet data}
+\cvevent{2015 / 07}{Graduated as B.Sc.Eng}{University of Oradea}{Bachelor Thesis: Software Application for monitoring an object using a Smartphone}{Developed a web application using rtsp/rtmp protocol and capture information from smartphone camera and stream it to a server}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2012 - 2013}{Master Project - PrIMA}{University of Bremen}{Co-Invented a touch table application for medical support, co-developed software (Java) }{Formed a scrum team, mainted project dev server (Debian), surveyed target audience}
+\cvevent{2014 - 2014}{Informal School of IT}{Oradea Business Center}{Went through a web programming course}{Developed a basic site that required basic CRUD operations}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2012 - 2015}{Master Studies Digital Media}{University of Bremen}{Inter-cultural classes in English, covering special topics in computer science and design}{Professionalized in research methods, software development and e-assessment}
-
-%\textcolor{softcol}{\hrule}
-
-%
-\cvevent{2009 - 2010}{Semester Abroad}{University of Melbourne}{Mastered six months of study and trans-cultural experience in Melbourne, Australia}{Finished machine programming, information visualization, professional essay writing}
-
+\cvevent{2011 - 2015}{B.Sc.Eng}{University of Oradea}{Studied networks \& telecommunications - networks infrastructures and get a basic knowledge in Matlab}{Programmed robots using Arduino, information visualization, professional essay writing}
 
 %--------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
@@ -402,7 +406,7 @@ Digital media graduate with project experience in the field of technology based 
 
 \null
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{www.jankuester.com} $\cdot$ \textcolor{sectcol}{github.com/jankapunkt}}}}
+\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{} $\cdot$ \textcolor{sectcol}{github.com/alexghi} $\cdot$}}}
 
 
 

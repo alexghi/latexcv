@@ -38,9 +38,3 @@ Build instructions
 - You need the tex-live distribution and tex-live fonts to build.
 - Run the main.tex and build with a LaTeX environment of your choice.
 
-
-Credits
--------
-
-Jan Küster
-www.jankuester.com
