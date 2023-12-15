@@ -96,7 +96,7 @@ This repo also contains a `texlive.profile` file in the project root, that can b
  * Clone or download this project. 
  * Change to a template folder, which contains a `main.tex` file do
  * Edit the `main.tex` according to your CV credentials, optionally change settings and colors etc.
- * Run `pdflatex` (build/compile) 
+ * Run `pdflatex` (build/compile) e.g. `pdflatex main.tex`
  - The `main.pdf` should show the output.
 
 
