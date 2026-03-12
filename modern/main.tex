@@ -1,4 +1,3 @@
-
 %we use article class because we want to fully customize the page and dont use a cv template
 \documentclass[10pt,A4]{article}
 
@@ -89,7 +88,7 @@
 \usepackage{array}
 
 \newcolumntype{x}[1]{%
->{\raggedleft\hspace{0pt}}p{#1}}%
+        >{\raggedleft\hspace{0pt}}p{#1}}%
 
 
 %----------------------------------------------------------------------------------------
@@ -135,9 +134,9 @@
 %============================================================================%
 
 \newcommand\AddAdditional[1]{%
-  \StrLen{#1}[\MyStrLen]% we find the length of the string and store it in \MyStrLen
-  \ifthenelse{\equal{\MyStrLen}{1}}% we compare the length of the string with 1
-        {}{\larrow{bgcol} #1}}
+    \StrLen{#1}[\MyStrLen]% we find the length of the string and store it in \MyStrLen
+    \ifthenelse{\equal{\MyStrLen}{1}}% we compare the length of the string with 1
+    {}{\larrow{bgcol} #1}}
 
 %----------------------------------------------------------------------------------------
 % 	HEADER
@@ -167,8 +166,8 @@
 %
 \newcommand{\larrow}[1]
 {\begin{tikzpicture}[scale=0.58]
-	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
- \end{tikzpicture}
+\filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+\end{tikzpicture}
 }
 
 % a six pointed arrow poiting to the right
@@ -179,8 +178,8 @@
 %
 \newcommand{\rarrow}
 {\begin{tikzpicture}[scale=0.7]
-	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
- \end{tikzpicture}
+\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
+\end{tikzpicture}
 }
 
 
@@ -194,9 +193,9 @@
 %
 \newcommand{\cvsection}[1]
 {
-\colorbox{sectcol}{\mystrut \makebox[1\linewidth][l]{
-\larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \textcolor{white}{\textbf{#1}}\hspace{4pt}
-}}\\
+    \colorbox{sectcol}{\mystrut \makebox[1\linewidth][l]{
+        \larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \hspace{-8pt} \larrow{bgcol} \textcolor{white}{\textbf{#1}}\hspace{4pt}
+    }}\\
 }
 
 %create a coloured arrow with title as cv meta section section
@@ -204,46 +203,47 @@
 %
 \newcommand{\metasection}[2]
 {
-\begin{tabular*}{1\textwidth}{p{2.4cm} p{11cm}}
-\larrow{bgcol}	\normalsize{\textcolor{sectcol}{#1}}&#2\\[12pt]
-\end{tabular*}
+    \begin{tabular*}{1\textwidth}{p{2.4cm} p{11cm}}
+    \larrow{bgcol}	\normalsize{\textcolor{sectcol}{#1}}&#2\\[12pt]
+    \end{tabular*}
 }
 
 %----------------------------------------------------------------------------------------
 %	 CV EVENT
 %----------------------------------------------------------------------------------------
 
-% creates a stretched box as cv entry headline followed by two paragraphs about
+% creates a stretched box as cv entry headline followed by paragraphs about
 % the work you did
 % param 1:	event time i.e. 2014 or 2011-2014 etc.
 % param 2:	event name (what did you do?)
 % param 3:	institution (where did you work / study)
-% param 4:	what was your position
-% param 5:	some words about your contributions
-% param 6:	some link
+% param 4:	first bullet point
+% param 5:	second bullet point (use ~ for empty)
+% param 6:	third bullet point (use ~ for empty)
+% param 7:	fourth bullet point (use ~ for empty)
 %
 \newcommand{\cvevent}[7]
 {
-\vspace{14pt}
-	\begin{tabular*}{1\textwidth}{p{2.3cm}  p{10.8cm} x{3.9cm}}
- \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol} {#3}
+    \vspace{14pt}
+    \begin{tabular*}{1\textwidth}{p{2.3cm}  p{10.8cm} x{3.9cm}}
+    \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol} {#3}
 
-	\end{tabular*}
-\vspace{6pt}
-	\begin{tabular*}{1\textwidth}{p{2.3cm} p{10.8cm} p{3.9cm}}
-&		 \larrow{bgcol}  #4 & \\[3pt]
-&		 \larrow{bgcol}  #5 & \\[6pt]
-&		 \AddAdditional{#6} & \\[4pt]
-& 		\AddAdditional{#7} &
-	\end{tabular*}
+    \end{tabular*}
+    \vspace{6pt}
+    \begin{tabular*}{1\textwidth}{p{2.3cm} p{10.8cm} p{3.9cm}}
+    &		 \larrow{bgcol}  #4 & \\[3pt]
+    &		 \AddAdditional{#5} & \\[6pt]
+    &		 \AddAdditional{#6} & \\[4pt]
+    & 		\AddAdditional{#7} &
+    \end{tabular*}
 
 }
 
 % creates a stretched box as
 \newcommand{\cveventmeta}[2]
 {
-	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
-	#2
+    \mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+    #2
 }
 
 %----------------------------------------------------------------------------------------
@@ -272,159 +272,140 @@
 
 
 %use our custom fancy header definitions
-\pagestyle{fancy}
+    \pagestyle{fancy}
 
 
 %---------------------------------------------------------------------------------------
 %	TITLE HEADLINE
 %----------------------------------------------------------------------------------------
-\vspace{-20.55pt}
-
-% use this for multiple words like working titles etc.
-%\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\hspace{46pt}\HUGE{\textcolor{white}{\textsc{Alex Ghiurău}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \parbox[b]{5cm}{   \large{ \textcolor{white}{{IT Consultant}}}\\
-% \large{ \textcolor{white}{{Resume}}}}
-%}}
+    \vspace{-20.55pt}
 
 % use this for single words, e.g. CV or RESUME etc.
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\HUGE{\textcolor{white}{\textsc{Alex Ghiurau}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \HUGE{\textcolor{white}{\textsc{Resume}} } }}
+    \hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\HUGE{\textcolor{white}{\textsc{Alex Ghiurau}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \HUGE{\textcolor{white}{\textsc{Resume}} } }}
 
 
 %----------------------------------------------------------------------------------------
 %	HEADER IMAGE
 %----------------------------------------------------------------------------------------
 
-\begin{figure}[H]
-\begin{flushright}
-	\includegraphics[width=103pt]{qrcode}
-	% \includegraphics[trim= 320 130 460 210,clip,width=0.2\linewidth]{myfoto.jpg}	%trimming relative to image size!
-\end{flushright}
-\end{figure}
-
-%---------------------------------------------------------------------------------------
-%	QR CODE (optional)
-%----------------------------------------------------------------------------------------
-%\vspace{-136pt}
-%\hspace{0.75\linewidth}
-%\includegraphics[width=103pt]{qrcode}
-%\normalsize
-%\vspace{88pt}
+    \begin{figure}[H]
+        \begin{flushright}
+            \includegraphics[width=103pt]{qrcode}
+        \end{flushright}
+    \end{figure}
 
 %---------------------------------------------------------------------------------------
 %	META SECTION
 %----------------------------------------------------------------------------------------
 
-\vspace{-114pt}
+    \vspace{-114pt}
 
-\metasection{Status:}{Fullstack JS Engineer, M.Sc.Eng - Audio \& Video Technologies}
-\metasection{Fields:}{Software Development, Teaching, Project Management, UX}
-\metasection{Tech:}{Javascript - (React, NodeJS, Extjs), ReactNative, Electron, GraphQL, MySQL, PHP, Git, PhpStorm, Sourcetree, AWS - (S3, CloudWatch)}
-\metasection{Loves:}{Music, Photography, Mountains, Books \& Tea}
+    \metasection{Status:}{Fullstack JS Engineer, M.Sc.Eng - Audio \& Video Technologies}
+    \metasection{Fields:}{Software Development, Teaching, Project Management, UX}
+    \metasection{Tech:}{Javascript - (React, NodeJS, Extjs), ReactNative, Electron, GraphQL, MySQL, PHP, Git, PhpStorm, Sourcetree, AWS - (S3, CloudWatch)}
+    \metasection{Loves:}{Music, Photography, Mountains, Books \& Tea}
 
-\vspace{6pt}
+    \vspace{6pt}
 
 %---------------------------------------------------------------------------------------
-%	SUMMARAY (optional)
+%	SUMMARY
 %----------------------------------------------------------------------------------------
+    \cvsection{Summary}
 
-%\cvsection{Summary}\\
-% I am a networking \& telecommunications graduate (B.S.E) with project experience in the private sector. I worked at Digi Communications, also known as RCS \& RDS (romania communication systems - romania data systems), as a Tech Support for clients.
+    I hold a Master of Science in Engineering, specializing in Networking and Telecommunications, with hands-on project experience in the private sector.
+    At Paymo, I worked on multiple projects, most recently building a mobile application using React Native and GraphQL. After Paymo was acquired by Profitsolv, I continued with projects such as iOrion (a legal practice app), building their mobile application with the same stack, and later contributing to other React-based projects. My most recent role at MangoShare (Profitsolv) was Tech Lead, where I led a team of five, stabilized the GCP infrastructure, and refactored the upload module.
+    As a personal project, I built Radio Aripi Spre Cer, a mobile radio app using React Native and Node.js --- \url{https://apple.co/430v2Nq}.
+    I also taught Advanced Concepts in Web Programming at Emanuel University of Oradea, a rewarding experience closely aligned with my professional interests.\\[-2pt]
+    In my free time, I enjoy reading, hiking, and photography.\\[-2pt]
 
-% Currently I develop a mobile application that replicates the main functionalities of the main webapp called Paymo (a Project Management SaaS app) with React Native so that we can target both main mobile platforms. I also love hiking into the mountains, taking photos of spectacular sceneries \& reading books.\\[-2pt]
-
-%============================================================================%
-%
-%	CV SECTIONS AND EVENTS (MAIN CONTENT)
-%
-%============================================================================%
+    \textcolor{softcol}{\hrule}
 
 %---------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
-\cvsection{Summary}
-\\I hold a Master of Science in Engineering, specializing in Networking and Telecommunications. I have gained hands-on project experience in the private sector.\\
-\\At Paymo, I worked on multiple projects, last one being building a mobile application using React Native, GraphQL, and related tools.\\
-\\After Paymo was acquired by Profitsolv, I continued working on projects such as iOrion (an app for lawyers), where I built their mobile application using the same stack, and later contributed to other projects using React.\\
-\\As a personal project, I created a mobile radio application, Radio Aripi Spre Cer, using React Native and NodeJS \\ - https://apple.co/430v2Nq. \\
-\\I also taught a course at Emanuel University of Oradea on Advanced Concepts in Web Programming, which was a rewarding experience and closely aligned with my professional interests.\\[-2pt]
-\\In my free time, I enjoy reading, hiking, and taking photos of people, nature, and landscapes.\\[-2pt]
-
-\textcolor{softcol}{\hrule}
-
-\cvsection{Experience}
+    \cvsection{Experience}
 
 %
-\cvevent{2022 - present}{Team Lead}{Profitsolv}
-{Developed the mobile app iOrion (iOrion6) in ReactNative, an app for lawyers to manage their cases, clients, and appointments}
-{Accelerated the development process in another project from the portfolio (MangoShare - a filesharing platform) with a React frontend and Node.js backend, under GCP infrastructure (Google Cloud Platform)}
-{Led a team of 4 and made architectural changes to a very old project, which resulted in a stability increase of the app, customer satisfaction, reduced costs, and increased revenue}
+    \cvevent{2023 - present}{Tech Lead}{Profitsolv (MangoShare)}
+    {Led a team of five through architectural refactoring of a legacy file-sharing platform (React, Node.js, GCP), improving stability and customer satisfaction}
+    {Reduced infrastructure costs by approximately 25--30\% through optimization of GCP resources and architectural improvements}
+    {~}
+    {~}
 
 %
-\cvevent{2017 - 2022}{Fullstack Javascript Engineer}{Paymo}
-{Developed the mobile app (Paymo) that has the same functionality as the main web app using React Native, GraphQL \& other libraries}
-{Created an onboarding progress tutorial for newly subscribed users using React}
-{Developed a timer widget using Electron so that users can easily track time and add time entries from their desktop platforms}
-{Implemented a Notifications Systems - a queued system that sends email notifications, in-app notifications, and mobile notifications (using Firebase) to concerned users using PHP Resque \& Redis}
+    \cvevent{2022 - 2023}{Mobile Developer}{Profitsolv (iOrion)}
+    {Built the iOrion mobile app in React Native --- a case, client, and appointment management tool for lawyers}
+    {~}
+    {~}
+    {~}
 
 %
-\cvevent{2022 - 2024}{Teacher}{University Emanuel of Oradea}
-{Designed a curriculum that covers fundamental and advanced concepts of React. This involves selecting appropriate textbooks, creating lecture materials, and designing hands-on projects that allow students to apply React concepts.}
-{Conducted lectures, demonstrations, and coding sessions to teach students how to use React effectively.}
-{Designed practical projects that enable students to apply React concepts in real-world scenarios.}
+    \cvevent{2017 - 2022}{Fullstack JavaScript Engineer}{Paymo}
+    {Developed the Paymo mobile app in React Native and GraphQL, delivering feature parity with the main web application}
+    {Built a desktop time-tracking widget using Electron for cross-platform time entry management}
+    {Implemented a queued notification system (email, in-app, mobile via Firebase) using PHP Resque and Redis}
+    {Created an onboarding tutorial for new users using React}
 
 %
-\cvevent{2022 - 2023}{Founder}{HyggeToday}
-{Started a startup, wore many hats doing lots of things, conceptualized and refined the startup idea, identified target market.}
-{Developed a comprehensive business plan that outlines the startup's goals, had an MVP ready.}
-{Probably the most valuable outcome of this was building a network of contacts, attending international events, and leveraging connections to gain insights, partnerships, potential business opportunities. Pitched the idea to investors}
+    \cvevent{2022 - 2024}{Lecturer}{Emanuel University of Oradea}
+    {Designed and delivered a curriculum covering fundamental and advanced React concepts, including lectures, coding sessions, and hands-on projects}
+    {Guided students through real-world project scenarios, bridging academic learning with practical application}
+    {~}
+    {~}
 
 %
-\cvevent{2022 - 2023}{Teacher - certified programming courses}{FasttrackIT}
-{Delivered lectures, demonstrations, and hands-on exercises to help students understand and apply web development concepts.}
-{Provideed constructive feedback on students' work, evaluating their progress, and assessing their understanding of the material through assignments, quizzes, and projects.}
-{Encouraged collaboration among students, fostering a supportive learning community, and promoting teamwork on group projects.}
-
-%\textcolor{softcol}{\hrule}
-
-%
-\cvevent{2015 - 2016}{Junior Javascript Engineer}{Paymo}{Implemented a File Uploader system that uploads in chunks on S3}{Restyled an old application using SCSS compiler \& give valuable UX advice}
-
-%\textcolor{softcol}{\hrule}
-
+    \cvevent{2022 - 2023}{Founder}{HyggeToday}
+    {Conceptualized a startup from idea through MVP, including business plan, target market analysis, and product development}
+    {Built a network through international events, pitched to investors, and leveraged connections for partnerships and business opportunities}
+    {~}
+    {~}
 
 %
-\cvevent{2012 - 2015}{Tech Support / Customer Service Representative}{RCS-RDS}{Diagnosed client problems and solve them via intern systems}{Solved technical tickets}
+    \cvevent{2022 - 2023}{Instructor}{FasttrackIT}
+    {Delivered certified programming courses covering web development through lectures, demonstrations, and hands-on exercises}
+    {Mentored students through assignments and group projects, fostering a collaborative learning environment}
+    {~}
+    {~}
 
+%
+    \cvevent{2015 - 2016}{Junior JavaScript Engineer}{Paymo}
+    {Implemented a chunked file upload system using AWS S3}
+    {Restyled a legacy application using SCSS and provided UX improvement recommendations}
+    {~}
+    {~}
+
+%
+    \cvevent{2012 - 2015}{Tech Support Representative}{RCS-RDS}
+    {Diagnosed and resolved client technical issues through internal support systems}
+    {~}
+    {~}
+    {~}
 
 %---------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %--------------------------------------------------------------------------------------
-\cvsection{Education}
+    \cvsection{Education}
 
-\cvevent{2024}{Master Sc.Eng in Audio \& Video technologies}{University of Oradea}{Master Thesis: An internet based radio application using a smartphone}{Developed an internet based radio app using React Native and NodeJS that streams music from a server to a smartphone}
-
-%\textcolor{softcol}{\hrule}
-
-%
-\cvevent{2015 / 07}{B.Sc.Eng}{University of Oradea}{Bachelor Thesis: Software Application for monitoring an object using a Smartphone}{Developed a web application using rtsp/rtmp protocol and capture information from smartphone camera and stream it to a server}
-
-%\textcolor{softcol}{\hrule}
+    \cvevent{2024}{Master Sc.Eng in Audio \& Video Technologies}{University of Oradea}
+    {Master Thesis: An internet based radio application using a smartphone}
+    {Developed an internet based radio app using React Native and NodeJS that streams music from a server to a smartphone}
+    {~}
+    {~}
 
 %
-% \cvevent{2014 - 2014}{Informal School of IT}{Oradea Business Center}{Went through a web programming course}{Developed a basic site that required basic CRUD operations}
-
-%\textcolor{softcol}{\hrule}
-
-%
-% \cvevent{2011 - 2015}{B.Sc.Eng}{University of Oradea}{Studied networks \& telecommunications - networks infrastructures and get a basic knowledge in Matlab}{Programmed robots using Arduino, information visualization, professional essay writing}
-
+    \cvevent{2015 / 07}{B.Sc.Eng}{University of Oradea}
+    {Bachelor Thesis: Software Application for monitoring an object using a Smartphone}
+    {Developed a web application using RTSP/RTMP protocol to capture and stream smartphone camera feeds to a server}
+    {~}
+    {~}
 
 %-------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth)
 %--------------------------------------------------------------------------------------------------
 
-\null
-\vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small $\cdot$ \textcolor{white}{github.com/alexghi}}}
+    \null
+    \vspace*{\fill}
+    \hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small $\cdot$ \textcolor{white}{github.com/alexghi}}}
 
 
 
