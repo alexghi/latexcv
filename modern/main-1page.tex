@@ -57,7 +57,7 @@
 \usepackage[a4paper]{geometry}
 
 % for example, change the margins to 2 inches all round
-\geometry{top=1.75cm, bottom=-.6cm, left=1.5cm, right=1.5cm}
+\geometry{top=1.5cm, bottom=-.6cm, left=1.5cm, right=1.5cm}
 
 %use customized header
 \usepackage{fancyhdr}
@@ -204,7 +204,7 @@
 \newcommand{\metasection}[2]
 {
     \begin{tabular*}{1\textwidth}{p{2.4cm} p{11cm}}
-    \larrow{bgcol}	\normalsize{\textcolor{sectcol}{#1}}&#2\\[12pt]
+    \larrow{bgcol}	\normalsize{\textcolor{sectcol}{#1}}&#2\\[8pt]
     \end{tabular*}
 }
 
@@ -224,16 +224,16 @@
 %
 \newcommand{\cvevent}[7]
 {
-    \vspace{14pt}
+    \vspace{6pt}
     \begin{tabular*}{1\textwidth}{p{2.3cm}  p{10.8cm} x{3.9cm}}
     \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol} {#3}
 
     \end{tabular*}
-    \vspace{6pt}
+    \vspace{0pt}
     \begin{tabular*}{1\textwidth}{p{2.3cm} p{10.8cm} p{3.9cm}}
-    &		 \larrow{bgcol}  #4 & \\[3pt]
-    &		 \AddAdditional{#5} & \\[6pt]
-    &		 \AddAdditional{#6} & \\[4pt]
+    &		 \larrow{bgcol}  #4 & \\[0pt]
+    &		 \AddAdditional{#5} & \\[1pt]
+    &		 \AddAdditional{#6} & \\[0pt]
     & 		\AddAdditional{#7} &
     \end{tabular*}
 
@@ -290,8 +290,8 @@
 
     \begin{figure}[H]
         \begin{flushright}
-            \includegraphics[width=103pt]{qrcode}\\[-2pt]
-            {\small\textcolor{bgcol}{LinkedIn Profile}}
+            \includegraphics[width=85pt]{qrcode}\\[-2pt]
+            {\small\textcolor{bgcol}{\href{https://www.linkedin.com/in/alexghiurau}{LinkedIn Profile}}}
         \end{flushright}
     \end{figure}
 
@@ -299,25 +299,19 @@
 %	META SECTION
 %----------------------------------------------------------------------------------------
 
-    \vspace{-114pt}
+    \vspace{-100pt}
 
-    \metasection{Status:}{Fullstack JS Engineer, M.Sc.Eng - Audio \& Video Technologies}
+    \metasection{Status:}{Tech Lead / Fullstack Engineer, M.Sc.Eng - Audio \& Video Technologies}
     \metasection{Fields:}{Software Development, Teaching, Project Management, UX}
-    \metasection{Tech:}{Javascript - (React, NodeJS, Extjs), ReactNative, Electron, GraphQL, MySQL, PHP, Git, PhpStorm, Sourcetree, AWS - (S3, CloudWatch)}
-    \metasection{Loves:}{Music, Photography, Mountains, Books \& Tea}
-
-    \vspace{6pt}
+    \metasection{Tech:}{JavaScript (React, Node.js), React Native, GraphQL, GCP, AWS, Electron, MySQL, Git, AI Tools (Claude Code, OpenClaw, ChatGPT, Gemini, Loveable)}
+    \vspace{2pt}
 
 %---------------------------------------------------------------------------------------
 %	SUMMARY
 %----------------------------------------------------------------------------------------
     \cvsection{Summary}
 
-    I hold a Master of Science in Engineering, specializing in Networking and Telecommunications, with hands-on project experience in the private sector.
-    At Paymo, I worked on multiple projects, most recently building a mobile application using React Native and GraphQL. After Paymo was acquired by Profitsolv, I continued with projects such as iOrion (a legal practice app), building their mobile application with the same stack, and later contributing to other React-based projects. My most recent role at MangoShare (Profitsolv) was Tech Lead, where I led a team of five, stabilized the GCP infrastructure, and refactored the upload module.
-    As a personal project, I built Radio Aripi Spre Cer, a mobile radio app using React Native and Node.js --- \url{https://apple.co/430v2Nq}.
-    I also taught Advanced Concepts in Web Programming at Emanuel University of Oradea, a rewarding experience closely aligned with my professional interests.\\[-2pt]
-    In my free time, I enjoy reading, hiking, and photography.\\[-2pt]
+    Tech Lead and Fullstack Engineer with 10+ years in software development. Led teams, stabilized GCP infrastructure (25--30\% cost reduction), and built mobile apps with React Native and GraphQL at Paymo and Profitsolv. Lectured on Advanced Web Programming at Emanuel University of Oradea (2022--2024). M.Sc.Eng in Audio \& Video Technologies.\\[-2pt]
 
     \textcolor{softcol}{\hrule}
 
@@ -341,46 +335,11 @@
     {~}
 
 %
-    \cvevent{2017 - 2022}{Fullstack JavaScript Engineer}{Paymo}
+    \cvevent{2015 - 2022}{Fullstack JavaScript Engineer}{Paymo}
     {Developed the Paymo mobile app in React Native and GraphQL, delivering feature parity with the main web application}
     {Built a desktop time-tracking widget using Electron for cross-platform time entry management}
     {Implemented a queued notification system (email, in-app, mobile via Firebase) using PHP Resque and Redis}
-    {Created an onboarding tutorial for new users using React}
-
-%
-    \cvevent{2022 - 2024}{Lecturer}{Emanuel University of Oradea}
-    {Designed and delivered a curriculum covering fundamental and advanced React concepts, including lectures, coding sessions, and hands-on projects}
-    {Guided students through real-world project scenarios, bridging academic learning with practical application}
-    {~}
-    {~}
-
-%
-    \cvevent{2022 - 2023}{Founder}{HyggeToday}
-    {Conceptualized a startup from idea through MVP, including business plan, target market analysis, and product development}
-    {Built a network through international events, pitched to investors, and leveraged connections for partnerships and business opportunities}
-    {~}
-    {~}
-
-%
-    \cvevent{2022 - 2023}{Instructor}{FasttrackIT}
-    {Delivered certified programming courses covering web development through lectures, demonstrations, and hands-on exercises}
-    {Mentored students through assignments and group projects, fostering a collaborative learning environment}
-    {~}
-    {~}
-
-%
-    \cvevent{2015 - 2016}{Junior JavaScript Engineer}{Paymo}
     {Implemented a chunked file upload system using AWS S3}
-    {Restyled a legacy application using SCSS and provided UX improvement recommendations}
-    {~}
-    {~}
-
-%
-    \cvevent{2012 - 2015}{Tech Support Representative}{RCS-RDS}
-    {Diagnosed and resolved client technical issues through internal support systems}
-    {~}
-    {~}
-    {~}
 
 %---------------------------------------------------------------------------------------
 %	EDUCATION SECTION
@@ -388,15 +347,14 @@
     \cvsection{Education}
 
     \cvevent{2024}{Master Sc.Eng in Audio \& Video Technologies}{University of Oradea}
-    {Master Thesis: An internet based radio application using a smartphone}
-    {Developed an internet based radio app using React Native and NodeJS that streams music from a server to a smartphone}
+    {Thesis: An internet based radio application using a smartphone --- built with React Native and Node.js}
+    {~}
     {~}
     {~}
 
-%
-    \cvevent{2015 / 07}{B.Sc.Eng}{University of Oradea}
-    {Bachelor Thesis: Software Application for monitoring an object using a Smartphone}
-    {Developed a web application using RTSP/RTMP protocol to capture and stream smartphone camera feeds to a server}
+    \cvevent{2015}{B.Sc.Eng in Electronics \& Telecommunications}{University of Oradea}
+    {Thesis: Software Application for monitoring an object using a Smartphone}
+    {~}
     {~}
     {~}
 
@@ -406,7 +364,7 @@
 
     \null
     \vspace*{\fill}
-    \hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small $\cdot$ \textcolor{white}{github.com/alexghi}}}
+    \hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{github.com/alexghi $\cdot$ \href{https://www.linkedin.com/in/alexghiurau}{linkedin.com/in/alexghiurau}}}}
 
 
 

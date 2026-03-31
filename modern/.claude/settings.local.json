@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdflatex -interaction=nonstopmode main-1page.tex 2>&1 | grep -E \"Output written|Error|!\")"
+    ]
+  }
+}

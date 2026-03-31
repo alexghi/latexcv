@@ -36,5 +36,19 @@ Build instructions
 ------------------
 
 - You need the tex-live distribution and tex-live fonts to build.
-- Run the main.tex and build with a LaTeX environment of your choice.
+
+**1-page version:**
+```bash
+pdflatex main-1page.tex
+```
+
+**2-page version:**
+```bash
+pdflatex main-2page.tex
+```
+
+**Build both:**
+```bash
+pdflatex main-1page.tex && pdflatex main-2page.tex
+```
 
